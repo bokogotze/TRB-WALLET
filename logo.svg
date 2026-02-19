@@ -1,0 +1,54 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Shield background -->
+  <path d="M100 10 L180 50 L180 120 Q180 160 100 190 Q20 160 20 120 L20 50 L100 10" 
+        fill="url(#goldGradient)" 
+        filter="url(#glow)"
+        opacity="0.9"/>
+  
+  <!-- Eagle -->
+  <g transform="translate(100,90)">
+    <!-- Eagle body -->
+    <path d="M-30 -30 L30 -30 L40 0 L30 30 L-30 30 L-40 0 Z" 
+          fill="#000000" 
+          opacity="0.8"/>
+    
+    <!-- Eagle head -->
+    <circle cx="0" cy="-40" r="20" fill="#000000"/>
+    
+    <!-- Eagle beak -->
+    <polygon points="10,-45 20,-35 5,-35" fill="#FFD700"/>
+    
+    <!-- Eagle eyes -->
+    <circle cx="-8" cy="-45" r="3" fill="#FFFFFF"/>
+    <circle cx="8" cy="-45" r="3" fill="#FFFFFF"/>
+    <circle cx="-8" cy="-45" r="1.5" fill="#000000"/>
+    <circle cx="8" cy="-45" r="1.5" fill="#000000"/>
+    
+    <!-- Wings -->
+    <path d="M-40 -20 Q-70 -50 -50 -70" stroke="#FFD700" stroke-width="8" fill="none"/>
+    <path d="M40 -20 Q70 -50 50 -70" stroke="#FFD700" stroke-width="8" fill="none"/>
+  </g>
+  
+  <!-- TRB Text -->
+  <text x="100" y="160" 
+        font-family="Arial Black" 
+        font-size="32" 
+        text-anchor="middle" 
+        fill="#000000"
+        filter="url(#glow)">TRB</text>
+</svg>

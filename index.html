@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TRB WALLET • GOLD EDITION</title>
+    
+    <!-- CRITICAL FOR APP-LIKE BEHAVIOR -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TRB Wallet">
+    
+    <!-- FONTS & ICONS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SPLASH SCREEN (First thing user sees) -->
+    <div class="splash-screen" id="splash">
+        <div class="logo-container">
+            <img src="logo.svg" alt="TRB" class="golden-logo">
+            <h1 class="gold-text">TRB WALLET</h1>
+            <div class="loader"></div>
+            <p class="loading-text">SECURE VAULT • INITIALIZING</p>
+        </div>
+    </div>
+
+    <!-- LOGIN SCREEN -->
+    <div class="login-screen" id="login">
+        <div class="login-container">
+            <img src="logo.svg" alt="TRB" class="login-logo">
+            <h2 class="welcome-text">WELCOME BACK</h2>
+            <p class="sub-text">Enter your credentials</p>
+            
+            <div class="input-group">
+                <i class="fas fa-user gold-icon"></i>
+                <input type="text" id="username" placeholder="Username" value="User2242" readonly class="prefilled">
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock gold-icon"></i>
+                <input type="password" id="password" placeholder="Password" value="Trb2242" readonly class="prefilled">
+            </div>
+            
+            <button class="login-btn" id="loginBtn">
+                <span>ACCESS VAULT</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            
+            <p class="hint">Only 1 account exists • User2242 / Trb2242</p>
+        </div>
+    </div>
+
+    <!-- MAIN WALLET DASHBOARD -->
+    <div class="wallet-screen" id="wallet">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="wallet-logo">
+                <img src="logo.svg" alt="TRB" class="bar-logo">
+                <span>TRB</span>
+            </div>
+            <div class="network-badge">
+                <i class="fas fa-globe"></i>
+                <span>Ethereum Mainnet</span>
+            </div>
+        </div>
+
+        <!-- Main Balance Card -->
+        <div class="balance-card">
+            <div class="balance-label">TOTAL BALANCE</div>
+            <div class="main-balance">$173,420,694.20</div>
+            <div class="btc-equivalent">≈ 2,847.53 BTC</div>
+            
+            <div class="balance-details">
+                <div class="detail-item">
+                    <span>24h Change</span>
+                    <span class="positive">+$4.2M ▲ 2.4%</span>
+                </div>
+                <div class="detail-item">
+                    <span>Holdings</span>
+                    <span>247 Assets</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="action-btn" id="sendBtn">
+                <i class="fas fa-paper-plane"></i>
+                <span>Send</span>
+            </div>
+            <div class="action-btn" id="receiveBtn">
+                <i class="fas fa-qrcode"></i>
+                <span>Receive</span>
+            </div>
+            <div class="action-btn" id="investBtn">
+                <i class="fas fa-chart-line"></i>
+                <span>Invest</span>
+            </div>
+            <div class="action-btn" id="withdrawBtn">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Withdraw</span>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+            <div class="section-header">
+                <h3>Your Assets</h3>
+                <span class="see-all">See All →</span>
+            </div>
+
+            <!-- Asset List -->
+            <div class="asset-list">
+                <div class="asset-item">
+                    <div class="asset-left">
+                        <i class="fab fa-bitcoin asset-icon btc"></i>
+                        <div>
+                            <div class="asset-name">Bitcoin</div>
+                            <div class="asset-symbol">BTC</div>
+                        </div>
+                    </div>
+                    <div class="asset-right">
+                        <div class="asset-value">$142,584,320</div>
+                        <div class="asset-amount">2,345.67 BTC</div>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-left">
+                        <i class="fab fa-ethereum asset-icon eth"></i>
+                        <div>
+                            <div class="asset-name">Ethereum</div>
+                            <div class="asset-symbol">ETH</div>
+                        </div>
+                    </div>
+                    <div class="asset-right">
+                        <div class="asset-value">$23,456,789</div>
+                        <div class="asset-amount">12,345 ETH</div>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-left">
+                        <i class="fas fa-coins asset-icon usdt"></i>
+                        <div>
+                            <div class="asset-name">Tether</div>
+                            <div class="asset-symbol">USDT</div>
+                        </div>
+                    </div>
+                    <div class="asset-right">
+                        <div class="asset-value">$5,000,000</div>
+                        <div class="asset-amount">5,000,000 USDT</div>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-left">
+                        <i class="fas fa-gem asset-icon"></i>
+                        <div>
+                            <div class="asset-name">TRB Gold</div>
+                            <div class="asset-symbol">TRBG</div>
+                        </div>
+                    </div>
+                    <div class="asset-right">
+                        <div class="asset-value">$2,379,585.20</div>
+                        <div class="asset-amount">847,502 TRBG</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Markets</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-history"></i>
+                <span>Activity</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    
+    <!-- Invest Modal -->
+    <div class="modal" id="investModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚀 INVEST MORE</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="agent-message">
+                    <i class="fas fa-user-tie gold-icon-large"></i>
+                    <h3>Contact Your Agent</h3>
+                    <p>To increase your investment and maximize returns, please contact your dedicated TRB agent.</p>
+                    <div class="agent-info">
+                        <p><i class="fas fa-envelope"></i> agent@trb-invest.io</p>
+                        <p><i class="fas fa-phone"></i> +1 (888) TRB-AGENT</p>
+                        <p><i class="fas fa-comment"></i> Telegram: @trb_agent</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('agent@trb-invest.io')">
+                        <i class="fas fa-copy"></i> Copy Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>💰 WITHDRAW FUNDS</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="withdraw-message">
+                    <i class="fas fa-lock gold-icon-large"></i>
+                    <h3>Access Required</h3>
+                    <p>Your $173M+ balance requires verified access to withdraw.</p>
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Complete verification to unlock withdrawal</p>
+                    </div>
+                    <a href="#" class="verify-link" onclick="openVerificationLink(); return false;">
+                        <i class="fas fa-external-link-alt"></i>
+                        CLICK HERE TO VERIFY & WITHDRAW
+                    </a>
+                    <p class="small-note">You'll be guided to secure verification portal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verification Link Modal (when they click withdraw link) -->
+    <div class="modal" id="linkModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔗 ACCESS PORTAL</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="link-message">
+                    <p>Your secure verification link:</p>
+                    <div class="link-box">
+                        https://trb-verify.online/access/173M
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('https://trb-verify.online/access/173M')">
+                        <i class="fas fa-copy"></i> Copy Link
+                    </button>
+                    <p class="small-note">Share this with anyone who needs to verify</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
