@@ -1,49 +1,50 @@
 <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- AMERICAN FLAG CIRCLE -->
+  <circle cx="200" cy="200" r="180" fill="url(#flagPattern)"/>
+  
   <defs>
-    <!-- REAL GOLD GRADIENT -->
-    <linearGradient id="realGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFD700" />
-      <stop offset="30%" stop-color="#FFC800" />
-      <stop offset="60%" stop-color="#DAA520" />
-      <stop offset="100%" stop-color="#B8860B" />
-    </linearGradient>
-    
-    <!-- GOLD SHINE -->
-    <radialGradient id="goldShine" cx="30%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#FFF8DC" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#DAA520" stop-opacity="0.2"/>
-    </radialGradient>
-    
-    <!-- STARS PATTERN -->
-    <pattern id="whiteStars" patternUnits="userSpaceOnUse" width="40" height="40">
-      <path d="M20 5 L23 15 L34 15 L25 22 L28 32 L20 26 L12 32 L15 22 L6 15 L17 15 Z" fill="white"/>
+    <!-- AMERICAN FLAG PATTERN INSIDE CIRCLE -->
+    <pattern id="flagPattern" patternUnits="userSpaceOnUse" width="360" height="360" patternTransform="rotate(0)">
+      <!-- Red stripes -->
+      <rect width="360" height="27.7" y="0" fill="#B22234"/>
+      <rect width="360" height="27.7" y="55.4" fill="#B22234"/>
+      <rect width="360" height="27.7" y="110.8" fill="#B22234"/>
+      <rect width="360" height="27.7" y="166.2" fill="#B22234"/>
+      <rect width="360" height="27.7" y="221.6" fill="#B22234"/>
+      <rect width="360" height="27.7" y="277" fill="#B22234"/>
+      <rect width="360" height="27.7" y="332.4" fill="#B22234"/>
+      
+      <!-- White stripes -->
+      <rect width="360" height="27.7" y="27.7" fill="#FFFFFF"/>
+      <rect width="360" height="27.7" y="83.1" fill="#FFFFFF"/>
+      <rect width="360" height="27.7" y="138.5" fill="#FFFFFF"/>
+      <rect width="360" height="27.7" y="193.9" fill="#FFFFFF"/>
+      <rect width="360" height="27.7" y="249.3" fill="#FFFFFF"/>
+      <rect width="360" height="27.7" y="304.7" fill="#FFFFFF"/>
+      
+      <!-- Blue canton -->
+      <rect width="130" height="194" y="0" fill="#3C3B6E"/>
+      
+      <!-- White stars -->
+      <circle cx="25" cy="25" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="25" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="25" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="145" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="145" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="145" r="4" fill="#FFFFFF"/>
     </pattern>
   </defs>
   
-  <!-- RED BACKGROUND -->
-  <rect width="400" height="400" fill="#B22234"/>
+  <!-- Gold border around circle -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#FFD700" stroke-width="8"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.5"/>
   
-  <!-- WHITE STARS ALL OVER -->
-  <rect width="400" height="400" fill="url(#whiteStars)" opacity="0.3"/>
-  
-  <!-- BLUE CIRCLE -->
-  <circle cx="200" cy="200" r="150" fill="#3C3B6E" stroke="white" stroke-width="4"/>
-  
-  <!-- BLUE CIRCLE INNER GLOW -->
-  <circle cx="200" cy="200" r="145" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.3"/>
-  
-  <!-- GOLD TEXT "TRB" -->
-  <text x="200" y="240" font-family="Arial Black, Impact, sans-serif" font-size="100" font-weight="900" text-anchor="middle" fill="url(#realGold)">TRB</text>
-  
-  <!-- GOLD TEXT SHADOW/HIGHLIGHT -->
-  <text x="200" y="240" font-family="Arial Black, Impact, sans-serif" font-size="100" font-weight="900" text-anchor="middle" fill="url(#goldShine)" dx="-2" dy="-2">TRB</text>
-  
-  <!-- SMALL STARS AROUND (optional) -->
-  <circle cx="200" cy="100" r="3" fill="white"/>
-  <circle cx="280" cy="150" r="3" fill="white"/>
-  <circle cx="300" cy="240" r="3" fill="white"/>
-  <circle cx="260" cy="320" r="3" fill="white"/>
-  <circle cx="140" cy="320" r="3" fill="white"/>
-  <circle cx="100" cy="240" r="3" fill="white"/>
-  <circle cx="120" cy="150" r="3" fill="white"/>
+  <!-- WHITE TEXT "TRB" - BOLD AND CLEAR -->
+  <text x="200" y="250" font-family="Arial Black, Helvetica, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#FFFFFF" stroke="#000000" stroke-width="2">TRB</text>
 </svg>
