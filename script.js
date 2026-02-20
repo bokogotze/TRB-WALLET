@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     // Elements
     const splash = document.getElementById('splash');
     const login = document.getElementById('login');
@@ -7,10 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('loginBtn');
     
     // Modals
-    const profileModal = document.getElementById('profileModal');
-    const historyModal = document.getElementById('historyModal');
-    const investModal = document.getElementById('investModal');
-    const withdrawModal = document.getElementById('withdrawModal');
+    const modals = {
+        profile: document.getElementById('profileModal'),
+        history: document.getElementById('historyModal'),
+        invest: document.getElementById('investModal'),
+        withdraw: document.getElementById('withdrawModal')
+    };
     
     // Buttons
     const profileTrigger = document.getElementById('profileTrigger');
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const receiveBtn = document.getElementById('receiveBtn');
     
     // Close buttons
-    const closeButtons = document.querySelectorAll('.close');
+    const closeButtons = document.querySelectorAll('.modal-close');
     
     // Splash to login
     setTimeout(() => {
@@ -39,50 +40,36 @@ document.addEventListener('DOMContentLoaded', function() {
         wallet.style.display = 'block';
     });
     
-    // Profile modal
-    profileTrigger.addEventListener('click', () => profileModal.style.display = 'flex');
-    profileNavBtn.addEventListener('click', () => profileModal.style.display = 'flex');
+    // Open modals
+    profileTrigger.addEventListener('click', () => modals.profile.style.display = 'flex');
+    profileNavBtn.addEventListener('click', () => modals.profile.style.display = 'flex');
+    historyBtn.addEventListener('click', () => modals.history.style.display = 'flex');
+    investBtn.addEventListener('click', () => modals.invest.style.display = 'flex');
+    withdrawBtn.addEventListener('click', () => modals.withdraw.style.display = 'flex');
     
-    // History modal
-    historyBtn.addEventListener('click', () => historyModal.style.display = 'flex');
-    
-    // Invest modal
-    investBtn.addEventListener('click', () => investModal.style.display = 'flex');
-    
-    // Withdraw modal
-    withdrawBtn.addEventListener('click', () => withdrawModal.style.display = 'flex');
-    
-    // Send button
-    sendBtn.addEventListener('click', () => {
-        alert('Contact agent to send: @trb_agent');
-    });
-    
-    // Receive button
-    receiveBtn.addEventListener('click', () => {
-        alert('TRB Wallet: bc1qtrb...patriot');
-    });
+    // Send/Receive alerts
+    sendBtn.addEventListener('click', () => alert('Contact @trb_agent to send'));
+    receiveBtn.addEventListener('click', () => alert('TRB Wallet: bc1qtrb..'));
     
     // Close modals
     closeButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            profileModal.style.display = 'none';
-            historyModal.style.display = 'none';
-            investModal.style.display = 'none';
-            withdrawModal.style.display = 'none';
+            Object.values(modals).forEach(modal => {
+                modal.style.display = 'none';
+            });
         });
     });
     
-    // Click outside
+    // Close on outside click
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
-            profileModal.style.display = 'none';
-            historyModal.style.display = 'none';
-            investModal.style.display = 'none';
-            withdrawModal.style.display = 'none';
+            Object.values(modals).forEach(modal => {
+                modal.style.display = 'none';
+            });
         }
     });
     
-    // Navigation active state
+    // Nav active state
     document.querySelectorAll('.nav-item').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
