@@ -7,15 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Modals
     const profileModal = document.getElementById('profileModal');
+    const agentModal = document.getElementById('agentModal');
     const withdrawModal = document.getElementById('withdrawModal');
-    const investModal = document.getElementById('investModal');
     
     // Buttons
     const profileBtn = document.getElementById('profileBtn');
-    const miningBtn = document.getElementById('miningBtn');
-    const walletBtn = document.getElementById('walletBtn');
-    const teamBtn = document.getElementById('teamBtn');
-    const acceleratorBtn = document.getElementById('acceleratorBtn');
+    const agentBtn = document.getElementById('agentBtn');
+    const depositBtn = document.getElementById('depositBtn');
+    const withdrawBtn = document.getElementById('withdrawBtn');
+    const statementBtn = document.getElementById('statementBtn');
+    const supportBtn = document.getElementById('supportBtn');
     
     // Close buttons
     const closeBtns = document.querySelectorAll('.close-modal');
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         splash.style.opacity = '0';
         setTimeout(() => {
             splash.style.display = 'none';
-            login.style.display = 'block';
+            login.style.display = 'flex';
         }, 500);
     }, 2000);
     
@@ -33,30 +34,36 @@ document.addEventListener('DOMContentLoaded', function() {
     loginBtn.addEventListener('click', () => {
         login.style.display = 'none';
         dashboard.style.display = 'block';
-        startTimer();
     });
     
     // Profile
     profileBtn.addEventListener('click', () => profileModal.style.display = 'flex');
     
-    // Bottom nav - open withdraw/invest modals
-    miningBtn.addEventListener('click', () => investModal.style.display = 'flex');
-    walletBtn.addEventListener('click', () => withdrawModal.style.display = 'flex');
-    teamBtn.addEventListener('click', () => alert('Referral team: 12 active miners'));
+    // Agent contact
+    agentBtn.addEventListener('click', () => agentModal.style.display = 'flex');
     
-    // Accelerator button
-    acceleratorBtn.addEventListener('click', function() {
-        alert('⚡ Accelerator activated! Mining speed boosted for 24h');
-        // Reset timer
-        startTimer();
+    // Deposit
+    depositBtn.addEventListener('click', () => {
+        alert('Please contact your agent Sarah Johnson at 1-800-555-0123 to add funds');
     });
+    
+    // Withdraw
+    withdrawBtn.addEventListener('click', () => withdrawModal.style.display = 'flex');
+    
+    // Statement
+    statementBtn.addEventListener('click', () => {
+        alert('Your statements are being prepared. Agent will contact you shortly.');
+    });
+    
+    // Support
+    supportBtn.addEventListener('click', () => agentModal.style.display = 'flex');
     
     // Close modals
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             profileModal.style.display = 'none';
+            agentModal.style.display = 'none';
             withdrawModal.style.display = 'none';
-            investModal.style.display = 'none';
         });
     });
     
@@ -64,69 +71,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
             profileModal.style.display = 'none';
+            agentModal.style.display = 'none';
             withdrawModal.style.display = 'none';
-            investModal.style.display = 'none';
         }
     });
     
-    // Navigation active
+    // Navigation
     document.querySelectorAll('.nav-item').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
+            
+            // Handle navigation
+            const text = this.querySelector('span').textContent;
+            if (text === 'Support') agentModal.style.display = 'flex';
+            if (text === 'Portfolio') alert('Portfolio summary: $247,389.42 total');
+            if (text === 'Documents') alert('Documents available in secure portal');
         });
     });
-    
-    // Balance update simulation
-    let balance = 12847.32;
-    setInterval(() => {
-        balance += 0.01;
-        document.getElementById('mainBalance').textContent = '$' + balance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }, 3000);
 });
-
-// Timer function
-function startTimer() {
-    let hours = 23;
-    let minutes = 59;
-    let seconds = 59;
-    
-    const timerDisplay = document.getElementById('countdown');
-    const progressFill = document.getElementById('miningProgress');
-    const progressPercent = document.getElementById('progressPercent');
-    
-    setInterval(() => {
-        if (seconds > 0) {
-            seconds--;
-        } else {
-            if (minutes > 0) {
-                minutes--;
-                seconds = 59;
-            } else {
-                if (hours > 0) {
-                    hours--;
-                    minutes = 59;
-                    seconds = 59;
-                }
-            }
-        }
-        
-        // Update timer
-        timerDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-        
-        // Update progress (inverse of timer)
-        const totalSeconds = 24 * 60 * 60;
-        const currentSeconds = (hours * 3600) + (minutes * 60) + seconds;
-        const progress = ((totalSeconds - currentSeconds) / totalSeconds) * 100;
-        
-        progressFill.style.width = progress + '%';
-        progressPercent.textContent = Math.round(progress) + '%';
-        
-    }, 1000);
-}
-
-// Copy referral link
-function copyRefLink() {
     navigator.clipboard.writeText('https://trb-mining.com/ref2242');
     alert('Referral link copied!');
 }
+
