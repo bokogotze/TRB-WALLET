@@ -3,135 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TRB WALLET</title>
+    <title>TRB Wallet • American</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="TRB Wallet">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- SPLASH -->
-    <div class="splash-screen" id="splash">
-        <div class="splash-content">
-            <img src="logo.svg" alt="TRB" class="splash-logo">
-            <h1 class="splash-title">TRB WALLET</h1>
-            <div class="loader"></div>
-        </div>
+    <!-- SPLASH SCREEN -->
+    <div class="splash" id="splash">
+        <img src="logo.svg" alt="TRB" class="splash-logo">
+        <h1>TRB Wallet</h1>
+        <div class="spinner"></div>
     </div>
 
-    <!-- LOGIN -->
-    <div class="login-screen" id="login">
+    <!-- LOGIN SCREEN -->
+    <div class="login" id="login">
         <div class="login-card">
             <img src="logo.svg" alt="TRB" class="login-logo">
             <h2>Welcome Back</h2>
-            <p>Sign in to continue</p>
+            <p class="login-sub">American Crypto Wallet</p>
             
-            <input type="text" id="username" value="User2242" readonly>
-            <input type="password" id="password" value="Trb2242" readonly>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" value="User2242" readonly>
+            </div>
             
-            <button id="loginBtn">Access Wallet</button>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" value="Trb2242" readonly>
+            </div>
+            
+            <button class="login-btn" id="loginBtn">Unlock Wallet</button>
         </div>
     </div>
 
-    <!-- WALLET -->
-    <div class="wallet-screen" id="wallet">
+    <!-- MAIN WALLET -->
+    <div class="wallet" id="wallet">
         <!-- Header -->
-        <div class="wallet-header">
+        <div class="header">
             <div class="header-left">
                 <img src="logo.svg" alt="TRB" class="header-logo">
-                <span>TRB WALLET</span>
+                <span>TRB Wallet</span>
             </div>
-            <div class="header-right">
-                <i class="fas fa-user-circle" id="profileTrigger"></i>
+            <i class="fas fa-user-circle" id="profileBtn"></i>
+        </div>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <p class="balance-label">Total Balance</p>
+            <h1 class="balance-amount">$173,498,277.30</h1>
+            <p class="balance-btc">≈ 2,847.53 BTC</p>
+            
+            <div class="balance-change positive">
+                <i class="fas fa-arrow-up"></i>
+                <span>+2.4% ($4.2M)</span>
             </div>
         </div>
 
-        <!-- Balance -->
-        <div class="balance-container">
-            <div class="balance-card">
-                <div class="balance-label">Total Balance</div>
-                <div class="balance-main">$173,498,277.30</div>
-                <div class="balance-btc">≈ 2,847.53 BTC</div>
-            </div>
+        <!-- Quick Actions -->
+        <div class="actions">
+            <button class="action-btn" id="sendBtn">
+                <div class="action-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <span>Send</span>
+            </button>
+            <button class="action-btn" id="receiveBtn">
+                <div class="action-icon">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <span>Receive</span>
+            </button>
+            <button class="action-btn" id="investBtn">
+                <div class="action-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span>Invest</span>
+            </button>
+            <button class="action-btn" id="withdrawBtn">
+                <div class="action-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <span>Withdraw</span>
+            </button>
         </div>
 
-        <!-- Portfolio Pie -->
-        <div class="pie-section">
-            <h3>Portfolio</h3>
+        <!-- Portfolio Section -->
+        <div class="section">
+            <div class="section-header">
+                <h3>Your Portfolio</h3>
+                <span>Details <i class="fas fa-chevron-right"></i></span>
+            </div>
+
+            <!-- Pie Chart -->
             <div class="pie-container">
-                <div class="pie-chart"></div>
+                <div class="pie-chart">
+                    <div class="pie-segment btc" style="--percent: 65"></div>
+                    <div class="pie-segment eth" style="--percent: 20"></div>
+                    <div class="pie-segment usdt" style="--percent: 10"></div>
+                    <div class="pie-segment trbg" style="--percent: 5"></div>
+                </div>
+                
                 <div class="pie-legend">
                     <div class="legend-item">
-                        <div class="legend-dot" style="background: #F7931A;"></div>
-                        <span>BTC 65%</span>
+                        <span class="dot" style="background: #F7931A;"></span>
+                        <span>Bitcoin <strong>65%</strong></span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-dot" style="background: #627EEA;"></div>
-                        <span>ETH 20%</span>
+                        <span class="dot" style="background: #627EEA;"></span>
+                        <span>Ethereum <strong>20%</strong></span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-dot" style="background: #26A17B;"></div>
-                        <span>USDT 10%</span>
+                        <span class="dot" style="background: #26A17B;"></span>
+                        <span>Tether <strong>10%</strong></span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-dot" style="background: #FFD700;"></div>
-                        <span>TRBG 5%</span>
+                        <span class="dot" style="background: #FFD700;"></span>
+                        <span>TRB Gold <strong>5%</strong></span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Quick Actions -->
-        <div class="actions-grid">
-            <button class="action-btn" id="sendBtn">
-                <i class="fas fa-paper-plane"></i>
-                <span>Send</span>
-            </button>
-            <button class="action-btn" id="receiveBtn">
-                <i class="fas fa-qrcode"></i>
-                <span>Receive</span>
-            </button>
-            <button class="action-btn" id="investBtn">
-                <i class="fas fa-chart-line"></i>
-                <span>Invest</span>
-            </button>
-            <button class="action-btn" id="withdrawBtn">
-                <i class="fas fa-money-bill-wave"></i>
-                <span>Withdraw</span>
-            </button>
+        <!-- Assets Section -->
+        <div class="section">
+            <div class="section-header">
+                <h3>Your Assets</h3>
+                <span>View All <i class="fas fa-chevron-right"></i></span>
+            </div>
+
+            <div class="assets-list">
+                <div class="asset-item">
+                    <div class="asset-icon btc">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <div class="asset-info">
+                        <span class="asset-name">Bitcoin</span>
+                        <span class="asset-symbol">BTC</span>
+                    </div>
+                    <div class="asset-values">
+                        <span class="asset-amount">2,345.67</span>
+                        <span class="asset-worth">$112.8M</span>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-icon eth">
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <div class="asset-info">
+                        <span class="asset-name">Ethereum</span>
+                        <span class="asset-symbol">ETH</span>
+                    </div>
+                    <div class="asset-values">
+                        <span class="asset-amount">12,345</span>
+                        <span class="asset-worth">$34.7M</span>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-icon usdt">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="asset-info">
+                        <span class="asset-name">Tether</span>
+                        <span class="asset-symbol">USDT</span>
+                    </div>
+                    <div class="asset-values">
+                        <span class="asset-amount">5,000,000</span>
+                        <span class="asset-worth">$5.0M</span>
+                    </div>
+                </div>
+
+                <div class="asset-item">
+                    <div class="asset-icon trbg">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="asset-info">
+                        <span class="asset-name">TRB Gold</span>
+                        <span class="asset-symbol">TRBG</span>
+                    </div>
+                    <div class="asset-values">
+                        <span class="asset-amount">847,502</span>
+                        <span class="asset-worth">$2.37M</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Assets -->
-        <div class="assets-grid">
-            <div class="asset-item">
-                <span class="asset-symbol">BTC</span>
-                <span class="asset-value">$112.8M</span>
-            </div>
-            <div class="asset-item">
-                <span class="asset-symbol">ETH</span>
-                <span class="asset-value">$34.7M</span>
-            </div>
-            <div class="asset-item">
-                <span class="asset-symbol">USDT</span>
-                <span class="asset-value">$17.3M</span>
-            </div>
-            <div class="asset-item">
-                <span class="asset-symbol">TRBG</span>
-                <span class="asset-value">$8.7M</span>
-            </div>
-        </div>
-
-        <!-- Bottom Nav -->
+        <!-- Bottom Navigation -->
         <div class="bottom-nav">
             <button class="nav-item active">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </button>
             <button class="nav-item" id="historyBtn">
-                <i class="fas fa-history"></i>
+                <i class="fas fa-clock"></i>
                 <span>History</span>
             </button>
             <button class="nav-item" id="profileNavBtn">
@@ -141,84 +213,86 @@
         </div>
     </div>
 
-    <!-- History Modal -->
+    <!-- HISTORY MODAL -->
     <div class="modal" id="historyModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Failed Withdrawals</h3>
-                <button class="modal-close">&times;</button>
+                <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="history-list">
-                    <div class="history-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <strong>0.5 BTC</strong>
-                            <small>Verification failed</small>
-                        </div>
-                        <span class="history-date">Mar 4</span>
+                <div class="history-item">
+                    <i class="fas fa-times-circle failed"></i>
+                    <div>
+                        <strong>0.5 BTC</strong>
+                        <p>Verification failed • March 4, 2025</p>
                     </div>
-                    <div class="history-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <strong>2.3 BTC</strong>
-                            <small>Security check</small>
-                        </div>
-                        <span class="history-date">Mar 2</span>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-times-circle failed"></i>
+                    <div>
+                        <strong>2.3 BTC</strong>
+                        <p>Security check required • March 2, 2025</p>
                     </div>
-                    <div class="history-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <strong>1.7 BTC</strong>
-                            <small>Contact agent</small>
-                        </div>
-                        <span class="history-date">Feb 28</span>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-times-circle failed"></i>
+                    <div>
+                        <strong>1.7 BTC</strong>
+                        <p>Contact agent • February 28, 2025</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Profile Modal -->
+    <!-- PROFILE MODAL -->
     <div class="modal" id="profileModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Profile</h3>
-                <button class="modal-close">&times;</button>
+                <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="profile-info">
-                    <p><strong>User2242</strong></p>
+                    <img src="logo.svg" alt="" class="profile-avatar">
+                    <h4>User2242</h4>
                     <p>Member since 2024</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Invest Modal -->
+    <!-- INVEST MODAL -->
     <div class="modal" id="investModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Contact Agent</h3>
-                <button class="modal-close">&times;</button>
+                <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p style="color: #8E8E8E; margin-bottom: 20px;">Telegram: @trb_agent</p>
-                <a href="https://t.me/trb_agent" class="telegram-link" target="_blank">Open Telegram</a>
+                <p style="margin-bottom: 20px;">Telegram: <strong>@trb_agent</strong></p>
+                <a href="https://t.me/trb_agent" class="telegram-btn" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    Open Telegram
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Withdraw Modal -->
+    <!-- WITHDRAW MODAL -->
     <div class="modal" id="withdrawModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Withdraw</h3>
-                <button class="modal-close">&times;</button>
+                <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p style="color: #8E8E8E; margin-bottom: 20px;">Contact agent to withdraw</p>
-                <a href="https://t.me/trb_agent" class="telegram-link" target="_blank">Contact @trb_agent</a>
+                <p style="margin-bottom: 20px;">Contact agent to withdraw funds</p>
+                <a href="https://t.me/trb_agent" class="telegram-btn" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    Message @trb_agent
+                </a>
             </div>
         </div>
     </div>
