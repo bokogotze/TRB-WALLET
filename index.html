@@ -3,435 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>TRB WALLET • GOLD EXECUTIVE</title>
+    <title>TRB WALLET • AMERICAN PATRIOT</title>
     
-    <!-- APP MANIFEST -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="TRB Wallet">
-    <meta name="format-detection" content="telephone=no">
     
-    <!-- FONTS & ICONS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- SPLASH SCREEN -->
     <div class="splash-screen" id="splash">
-        <div class="splash-bg"></div>
         <div class="splash-content">
-            <div class="logo-3d-container">
-                <img src="logo.svg" alt="TRB" class="logo-3d">
-                <div class="logo-ring"></div>
-            </div>
-            <h1 class="splash-title"><span class="gold">TRB</span> WALLET</h1>
-            <div class="splash-loader">
-                <div class="loader-bar"></div>
-            </div>
-            <p class="splash-text">GOLD EXECUTIVE • SECURE VAULT</p>
+            <img src="logo.svg" alt="TRB Wallet" class="splash-logo">
+            <h1 class="splash-title">TRB WALLET</h1>
+            <div class="loader"></div>
         </div>
     </div>
 
     <!-- LOGIN SCREEN -->
     <div class="login-screen" id="login">
-        <div class="login-bg">
-            <div class="bg-particles"></div>
-        </div>
         <div class="login-card">
-            <div class="login-logo-container">
-                <img src="logo.svg" alt="TRB" class="login-logo">
-            </div>
-            <h2 class="login-title">Welcome Back</h2>
-            <p class="login-sub">Executive access required</p>
+            <img src="logo.svg" alt="TRB" class="login-logo">
+            <h2>WELCOME BACK</h2>
+            <p>Patriot Access</p>
             
-            <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input type="text" id="username" value="User2242" readonly>
-                <span class="input-border"></span>
-            </div>
+            <input type="text" id="username" value="User2242" readonly>
+            <input type="password" id="password" value="Trb2242" readonly>
             
-            <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" value="Trb2242" readonly>
-                <span class="input-border"></span>
-            </div>
-            
-            <button class="login-button" id="loginBtn">
-                <span>ACCESS VAULT</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
-            
-            <p class="login-hint">Exclusive access • 1 account only</p>
+            <button id="loginBtn">ACCESS VAULT</button>
         </div>
     </div>
 
     <!-- MAIN WALLET -->
     <div class="wallet-screen" id="wallet">
-        <!-- Background Effects -->
-        <div class="wallet-bg">
-            <div class="gradient-sphere"></div>
-            <div class="grid-overlay"></div>
+        <!-- Simple Header -->
+        <div class="header">
+            <img src="logo.svg" alt="TRB" class="header-logo">
+            <span>TRB WALLET</span>
+            <i class="fas fa-user" id="profileTrigger"></i>
         </div>
 
-        <!-- Header -->
-        <div class="wallet-header">
-            <div class="header-left">
-                <img src="logo.svg" alt="TRB" class="header-logo">
-                <span class="header-title">TRB</span>
-            </div>
-            <div class="header-right">
-                <div class="notification-badge">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge">3</span>
-                </div>
-                <div class="profile-trigger" id="profileTrigger">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>
+        <!-- BALANCE - FULLY VISIBLE -->
+        <div class="balance-card">
+            <div class="balance-label">TOTAL BALANCE</div>
+            <div class="balance-main">$173,498,277.30</div>
+            <div class="balance-btc">≈ 2,847.53 BTC</div>
         </div>
 
-        <!-- MAIN BALANCE CARD -->
-        <div class="balance-container">
-            <div class="balance-card">
-                <div class="balance-label">TOTAL EXECUTIVE BALANCE</div>
-                <div class="balance-main" id="mainBalance">$173,420,694.20</div>
-                <div class="balance-secondary">
-                    <span class="btc-value">≈ 2,847.53 BTC</span>
-                    <span class="change-indicator positive">+2.4%</span>
+        <!-- PIE CHART SECTION -->
+        <div class="pie-section">
+            <h3>PORTFOLIO</h3>
+            <div class="pie-container">
+                <div class="pie">
+                    <div class="pie-slice btc" style="--percent: 65; --color: #F7931A;"></div>
+                    <div class="pie-slice eth" style="--percent: 20; --color: #627EEA;"></div>
+                    <div class="pie-slice usdt" style="--percent: 10; --color: #26A17B;"></div>
+                    <div class="pie-slice trbg" style="--percent: 5; --color: #FFD700;"></div>
                 </div>
-                
-                <div class="balance-stats">
-                    <div class="stat-item">
-                        <span class="stat-label">Holdings</span>
-                        <span class="stat-value">247</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Profit</span>
-                        <span class="stat-value positive">+$4.2M</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Rank</span>
-                        <span class="stat-value">#42</span>
-                    </div>
+                <div class="pie-legend">
+                    <div><span style="background:#F7931A;"></span> BTC 65%</div>
+                    <div><span style="background:#627EEA;"></span> ETH 20%</div>
+                    <div><span style="background:#26A17B;"></span> USDT 10%</div>
+                    <div><span style="background:#FFD700;"></span> TRBG 5%</div>
                 </div>
             </div>
         </div>
 
-        <!-- QUICK ACTIONS -->
-        <div class="actions-grid">
-            <button class="action-btn" id="sendBtn">
-                <div class="action-icon"><i class="fas fa-paper-plane"></i></div>
-                <span>Send</span>
-            </button>
-            <button class="action-btn" id="receiveBtn">
-                <div class="action-icon"><i class="fas fa-qrcode"></i></div>
-                <span>Receive</span>
-            </button>
-            <button class="action-btn" id="investBtn">
-                <div class="action-icon"><i class="fas fa-chart-line"></i></div>
-                <span>Invest</span>
-            </button>
-            <button class="action-btn" id="withdrawBtn">
-                <div class="action-icon"><i class="fas fa-money-bill-wave"></i></div>
-                <span>Withdraw</span>
-            </button>
+        <!-- ACTIONS -->
+        <div class="actions">
+            <button id="sendBtn"><i class="fas fa-paper-plane"></i> Send</button>
+            <button id="receiveBtn"><i class="fas fa-qrcode"></i> Receive</button>
+            <button id="investBtn"><i class="fas fa-chart-line"></i> Invest</button>
+            <button id="withdrawBtn"><i class="fas fa-money-bill"></i> Withdraw</button>
         </div>
 
-        <!-- PORTFOLIO SECTION -->
-        <div class="portfolio-section">
-            <div class="section-header">
-                <h3>Executive Portfolio</h3>
-                <span class="header-action">View all <i class="fas fa-chevron-right"></i></span>
-            </div>
-
-            <div class="assets-list">
-                <div class="asset-item">
-                    <div class="asset-icon-wrapper btc">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
-                    <div class="asset-info">
-                        <span class="asset-name">Bitcoin</span>
-                        <span class="asset-symbol">BTC</span>
-                    </div>
-                    <div class="asset-values">
-                        <span class="asset-amount">2,345.67</span>
-                        <span class="asset-value">$142.58M</span>
-                    </div>
-                </div>
-
-                <div class="asset-item">
-                    <div class="asset-icon-wrapper eth">
-                        <i class="fab fa-ethereum"></i>
-                    </div>
-                    <div class="asset-info">
-                        <span class="asset-name">Ethereum</span>
-                        <span class="asset-symbol">ETH</span>
-                    </div>
-                    <div class="asset-values">
-                        <span class="asset-amount">12,345</span>
-                        <span class="asset-value">$23.45M</span>
-                    </div>
-                </div>
-
-                <div class="asset-item">
-                    <div class="asset-icon-wrapper usdt">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="asset-info">
-                        <span class="asset-name">Tether</span>
-                        <span class="asset-symbol">USDT</span>
-                    </div>
-                    <div class="asset-values">
-                        <span class="asset-amount">5,000,000</span>
-                        <span class="asset-value">$5.00M</span>
-                    </div>
-                </div>
-
-                <div class="asset-item">
-                    <div class="asset-icon-wrapper gold">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <div class="asset-info">
-                        <span class="asset-name">TRB Gold</span>
-                        <span class="asset-symbol">TRBG</span>
-                    </div>
-                    <div class="asset-values">
-                        <span class="asset-amount">847,502</span>
-                        <span class="asset-value">$2.37M</span>
-                    </div>
-                </div>
-            </div>
+        <!-- ASSETS SUMMARY -->
+        <div class="assets">
+            <div class="asset"><span>BTC</span> $112.8M</div>
+            <div class="asset"><span>ETH</span> $34.7M</div>
+            <div class="asset"><span>USDT</span> $17.3M</div>
+            <div class="asset"><span>TRBG</span> $8.7M</div>
         </div>
 
-        <!-- ACTIVITY SECTION -->
-        <div class="activity-section">
-            <div class="section-header">
-                <h3>Recent Activity</h3>
-                <span class="header-action">Filter <i class="fas fa-sliders-h"></i></span>
-            </div>
-
-            <div class="activity-list">
-                <div class="activity-item failed">
-                    <div class="activity-icon"><i class="fas fa-times-circle"></i></div>
-                    <div class="activity-details">
-                        <span class="activity-title">Withdrawal Failed</span>
-                        <span class="activity-sub">Insufficient verification • $50,000</span>
-                    </div>
-                    <span class="activity-time">2 min ago</span>
-                </div>
-
-                <div class="activity-item failed">
-                    <div class="activity-icon"><i class="fas fa-times-circle"></i></div>
-                    <div class="activity-details">
-                        <span class="activity-title">Withdrawal Failed</span>
-                        <span class="activity-sub">Security check required • $125,000</span>
-                    </div>
-                    <span class="activity-time">1 hour ago</span>
-                </div>
-
-                <div class="activity-item failed">
-                    <div class="activity-icon"><i class="fas fa-times-circle"></i></div>
-                    <div class="activity-details">
-                        <span class="activity-title">Withdrawal Failed</span>
-                        <span class="activity-sub">Contact agent • $1,000,000</span>
-                    </div>
-                    <span class="activity-time">3 hours ago</span>
-                </div>
-
-                <div class="activity-item success">
-                    <div class="activity-icon"><i class="fas fa-check-circle"></i></div>
-                    <div class="activity-details">
-                        <span class="activity-title">Deposit Confirmed</span>
-                        <span class="activity-sub">+ 0.5 BTC</span>
-                    </div>
-                    <span class="activity-time">Yesterday</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- BOTTOM NAVIGATION -->
+        <!-- BOTTOM NAV -->
         <div class="bottom-nav">
-            <button class="nav-item active">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </button>
-            <button class="nav-item">
-                <i class="fas fa-chart-pie"></i>
-                <span>Analytics</span>
-            </button>
-            <button class="nav-item">
-                <i class="fas fa-clock"></i>
-                <span>History</span>
-            </button>
-            <button class="nav-item" id="profileNavBtn">
-                <i class="fas fa-crown"></i>
-                <span>Executive</span>
-            </button>
+            <button class="active"><i class="fas fa-home"></i><span>Home</span></button>
+            <button id="historyBtn"><i class="fas fa-history"></i><span>History</span></button>
+            <button id="profileNavBtn"><i class="fas fa-user"></i><span>Profile</span></button>
         </div>
     </div>
 
-    <!-- INVEST MODAL -->
-    <div class="modal" id="investModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content premium">
+    <!-- HISTORY MODAL (ONLY FAILED) -->
+    <div class="modal" id="historyModal">
+        <div class="modal-content">
             <div class="modal-header">
-                <h2>Executive Investment</h2>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <h3>FAILED WITHDRAWALS</h3>
+                <button class="close">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="agent-profile">
-                    <img src="logo.svg" alt="Agent" class="agent-avatar">
-                    <h3>Contact Your Agent</h3>
-                    <p class="agent-title">Senior Wealth Manager • TRB Executive</p>
-                    
-                    <div class="agent-contacts">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>agent@trb-executive.io</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+1 (888) 872-4368</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-telegram"></i>
-                            <span>@trb_executive</span>
-                        </div>
-                    </div>
-                    
-                    <button class="copy-button" onclick="copyToClipboard('agent@trb-executive.io')">
-                        <i class="fas fa-copy"></i> Copy Contact
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WITHDRAW MODAL -->
-    <div class="modal" id="withdrawModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content premium">
-            <div class="modal-header">
-                <h2>Withdrawal Request</h2>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="withdraw-status">
-                    <div class="status-icon pending">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Access Restricted</h3>
-                    <p class="status-message">Your $173M+ balance requires executive verification</p>
-                    
-                    <div class="verification-box">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <strong>Level 4 Security Required</strong>
-                            <span>Complete verification to unlock withdrawals</span>
-                        </div>
-                    </div>
-                    
-                    <button class="verify-button" onclick="openVerificationLink()">
-                        <i class="fas fa-external-link-alt"></i>
-                        VERIFY NOW
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PROFILE MODAL -->
-    <div class="modal" id="profileModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content premium full">
-            <div class="modal-header">
-                <h2>Executive Profile</h2>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="profile-header">
-                    <img src="logo.svg" alt="Profile" class="profile-avatar">
+                <div class="history-item">
+                    <i class="fas fa-times-circle"></i>
                     <div>
-                        <h3 class="profile-name">User2242</h3>
-                        <p class="profile-tier">TRB GOLD EXECUTIVE</p>
-                    </div>
-                    <div class="profile-badge">
-                        <i class="fas fa-crown"></i>
-                        <span>VIP #0001</span>
+                        <strong>0.5 BTC</strong>
+                        <small>Mar 4, 2025</small>
                     </div>
                 </div>
-                
-                <div class="profile-stats">
-                    <div class="profile-stat">
-                        <span class="stat-label">Member Since</span>
-                        <span class="stat-value">2024</span>
-                    </div>
-                    <div class="profile-stat">
-                        <span class="stat-label">Total Value</span>
-                        <span class="stat-value">$173.4M</span>
-                    </div>
-                    <div class="profile-stat">
-                        <span class="stat-label">Rank</span>
-                        <span class="stat-value">#42</span>
+                <div class="history-item">
+                    <i class="fas fa-times-circle"></i>
+                    <div>
+                        <strong>2.3 BTC</strong>
+                        <small>Mar 2, 2025</small>
                     </div>
                 </div>
-                
-                <div class="profile-section">
-                    <h4>Security Settings</h4>
-                    <div class="security-item">
-                        <i class="fas fa-check-circle gold"></i>
-                        <div>
-                            <strong>2FA Enabled</strong>
-                            <span>Premium protection</span>
-                        </div>
+                <div class="history-item">
+                    <i class="fas fa-times-circle"></i>
+                    <div>
+                        <strong>1.7 BTC</strong>
+                        <small>Feb 28, 2025</small>
                     </div>
-                    <div class="security-item">
-                        <i class="fas fa-check-circle gold"></i>
-                        <div>
-                            <strong>Biometric Access</strong>
-                            <span>Face ID / Touch ID</span>
-                        </div>
-                    </div>
-                    <div class="security-item warning">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <strong>Withdrawal Lock</strong>
-                            <span>Contact agent to unlock</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="referral-box">
-                    <h4>Executive Referral</h4>
-                    <p>Share with trusted associates</p>
-                    <div class="referral-code">TRB-2242-EXEC</div>
-                    <button class="copy-button" onclick="copyToClipboard('TRB-2242-EXEC')">
-                        <i class="fas fa-copy"></i> Copy Code
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- LINK MODAL -->
-    <div class="modal" id="linkModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content premium">
+    <!-- PROFILE MODAL (SIMPLE) -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
             <div class="modal-header">
-                <h2>Verification Portal</h2>
-                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <h3>USER INFO</h3>
+                <button class="close">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="link-container">
-                    <i class="fas fa-link gold-icon"></i>
-                    <p>Your executive verification link:</p>
-                    <div class="link-box">https://verify.trb-executive.io/access/173M</div>
-                    <button class="copy-button" onclick="copyToClipboard('https://verify.trb-executive.io/access/173M')">
-                        <i class="fas fa-copy"></i> Copy Link
-                    </button>
-                    <p class="link-note">Share only with authorized personnel</p>
-                </div>
+                <p><strong>User:</strong> User2242</p>
+                <p><strong>Status:</strong> Patriot Member</p>
+                <p><strong>Joined:</strong> 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INVEST MODAL (TELEGRAM LINK) -->
+    <div class="modal" id="investModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>CONTACT AGENT</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Telegram: @trb_agent</p>
+                <a href="https://t.me/trb_agent" target="_blank">Open Telegram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WITHDRAW MODAL (SAME AS INVEST LINK) -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>WITHDRAWAL</h3>
+                <button class="close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Contact agent to withdraw</p>
+                <p>Telegram: @trb_agent</p>
             </div>
         </div>
     </div>
