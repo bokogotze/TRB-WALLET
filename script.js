@@ -1,24 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Splash
+    // Elements
     const splash = document.getElementById('splash');
     const login = document.getElementById('login');
     const wallet = document.getElementById('wallet');
+    const loginBtn = document.getElementById('loginBtn');
     
     // Modals
     const profileModal = document.getElementById('profileModal');
-    const historyModal = document.getElementById('historyModal');
     const investModal = document.getElementById('investModal');
     const withdrawModal = document.getElementById('withdrawModal');
     
     // Buttons
-    const loginBtn = document.getElementById('loginBtn');
     const profileBtn = document.getElementById('profileBtn');
     const profileNavBtn = document.getElementById('profileNavBtn');
-    const historyBtn = document.getElementById('historyBtn');
     const investBtn = document.getElementById('investBtn');
     const withdrawBtn = document.getElementById('withdrawBtn');
-    const sendBtn = document.getElementById('sendBtn');
-    const receiveBtn = document.getElementById('receiveBtn');
     
     // Close buttons
     const closeBtns = document.querySelectorAll('.close-modal');
@@ -41,19 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Open modals
     profileBtn.addEventListener('click', () => profileModal.style.display = 'flex');
     profileNavBtn.addEventListener('click', () => profileModal.style.display = 'flex');
-    historyBtn.addEventListener('click', () => historyModal.style.display = 'flex');
     investBtn.addEventListener('click', () => investModal.style.display = 'flex');
     withdrawBtn.addEventListener('click', () => withdrawModal.style.display = 'flex');
-    
-    // Send/Receive
-    sendBtn.addEventListener('click', () => alert('📤 Contact @trb_agent to send'));
-    receiveBtn.addEventListener('click', () => alert('📥 TRB Wallet: bc1qtrb...patriot'));
     
     // Close modals
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             profileModal.style.display = 'none';
-            historyModal.style.display = 'none';
             investModal.style.display = 'none';
             withdrawModal.style.display = 'none';
         });
@@ -63,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal')) {
             profileModal.style.display = 'none';
-            historyModal.style.display = 'none';
             investModal.style.display = 'none';
             withdrawModal.style.display = 'none';
         }
