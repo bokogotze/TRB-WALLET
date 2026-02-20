@@ -1,135 +1,183 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Realistic gold gradients -->
-    <linearGradient id="goldPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F0E68C;stop-opacity:1" />
-      <stop offset="30%" style="stop-color:#FFD700;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#FFA500;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    <!-- PHOTOREALISTIC GOLD GRADIENTS -->
+    <linearGradient id="goldBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBF5E3;stop-opacity:1" />
+      <stop offset="15%" style="stop-color:#FFE55C;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#C5A028;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B691B;stop-opacity:1" />
     </linearGradient>
     
-    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#FFF8DC;stop-opacity:0.8" />
-      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:0.8" />
-    </linearGradient>
+    <radialGradient id="goldShine" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#FFFCD1;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:0.2" />
+    </radialGradient>
     
-    <!-- 3D lighting effects -->
-    <filter id="3dDepth" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-      <feOffset dx="2" dy="2" result="shadow"/>
-      <feComponentTransfer in="shadow" result="shadowAlpha">
-        <feFuncA type="linear" slope="0.3"/>
-      </feComponentTransfer>
-      <feMerge>
-        <feMergeNode in="shadowAlpha"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <radialGradient id="goldShadow" cx="70%" cy="70%" r="80%">
+      <stop offset="0%" style="stop-color:#B8860B;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#4A3C1A;stop-opacity:0.8" />
+    </radialGradient>
     
-    <filter id="goldGlow">
-      <feGaussianBlur stdDeviation="4" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <!-- EYE GRADIENTS -->
+    <radialGradient id="eyeHighlight" cx="30%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
     
-    <!-- Polished metal effect -->
-    <pattern id="metalPattern" patternUnits="userSpaceOnUse" width="10" height="10">
-      <linearGradient id="metalGrad" x1="0" y1="0" x2="10" y2="10">
-        <stop offset="0%" stop-color="#FFD700" stop-opacity="0.9"/>
-        <stop offset="50%" stop-color="#FFF8DC" stop-opacity="0.5"/>
-        <stop offset="100%" stop-color="#FFA500" stop-opacity="0.9"/>
-      </linearGradient>
-      <rect width="10" height="10" fill="url(#metalGrad)"/>
+    <radialGradient id="eyeIris" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#DAA520"/>
+      <stop offset="70%" stop-color="#8B4513"/>
+      <stop offset="100%" stop-color="#4A2C0D"/>
+    </radialGradient>
+    
+    <!-- FEATHER TEXTURE PATTERN -->
+    <pattern id="featherPattern" patternUnits="userSpaceOnUse" width="20" height="20" patternTransform="rotate(30)">
+      <line x1="0" y1="10" x2="20" y2="10" stroke="#FFD700" stroke-width="0.8" opacity="0.2"/>
+      <line x1="10" y1="0" x2="10" y2="20" stroke="#FFE55C" stroke-width="0.5" opacity="0.15"/>
     </pattern>
+    
+    <!-- REALISTIC METAL FILTER -->
+    <filter id="realisticGold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="6" specularConstant="0.8" specularExponent="20" lighting-color="#FFD700" result="specular">
+        <fePointLight x="50" y="50" z="100"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="specular" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
   </defs>
   
-  <!-- 3D Shield Base -->
-  <g filter="url(#3dDepth)">
-    <!-- Main shield shape with depth -->
-    <path d="M100 10 L180 50 L180 120 Q180 160 100 190 Q20 160 20 120 L20 50 L100 10" 
-          fill="url(#goldPrimary)" 
+  <!-- BACKGROUND SHIELD (Subtle) -->
+  <g opacity="0.3">
+    <path d="M200 40 L340 110 L340 210 Q340 280 200 340 Q60 280 60 210 L60 110 L200 40" 
+          fill="url(#goldBase)" 
+          stroke="#8B691B" 
+          stroke-width="4"/>
+  </g>
+  
+  <!-- MAIN EAGLE - PHOTOREALISTIC -->
+  <g transform="translate(200, 200)" filter="url(#realisticGold)">
+    <!-- BODY - Muscular chest -->
+    <ellipse cx="0" cy="30" rx="70" ry="50" fill="url(#goldBase)" />
+    <ellipse cx="0" cy="20" rx="65" ry="45" fill="url(#goldShine)" opacity="0.6"/>
+    
+    <!-- NECK FEATHERS -->
+    <path d="M-20 -5 Q0 10 20 -5" fill="url(#goldBase)" opacity="0.8"/>
+    
+    <!-- HEAD - Realistic eagle proportions -->
+    <ellipse cx="0" cy="-45" rx="35" ry="42" fill="url(#goldBase)"/>
+    
+    <!-- CERE (fleshy part above beak) -->
+    <ellipse cx="0" cy="-70" rx="15" ry="12" fill="#DAA520"/>
+    
+    <!-- BEAK - Curved and realistic -->
+    <path d="M15 -70 Q35 -65 25 -45 Q20 -55 8 -62 Z" fill="#C5A028" stroke="#8B691B" stroke-width="2"/>
+    <path d="M-15 -70 Q-35 -65 -25 -45 Q-20 -55 -8 -62 Z" fill="#C5A028" stroke="#8B691B" stroke-width="2"/>
+    
+    <!-- BEAK HOOK -->
+    <path d="M25 -45 Q20 -40 12 -50" fill="#8B691B" opacity="0.8"/>
+    
+    <!-- EYES - HYPERREALISTIC -->
+    <!-- Left eye socket -->
+    <ellipse cx="-15" cy="-55" rx="12" ry="14" fill="#2C1E0A"/>
+    <!-- Left eye iris -->
+    <circle cx="-15" cy="-55" r="8" fill="url(#eyeIris)"/>
+    <!-- Left eye pupil -->
+    <circle cx="-15" cy="-55" r="4" fill="#000000"/>
+    <!-- Left eye highlight -->
+    <circle cx="-18" cy="-58" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="-19" cy="-59" r="1" fill="#FFFFFF"/>
+    
+    <!-- Right eye socket -->
+    <ellipse cx="15" cy="-55" rx="12" ry="14" fill="#2C1E0A"/>
+    <!-- Right eye iris -->
+    <circle cx="15" cy="-55" r="8" fill="url(#eyeIris)"/>
+    <!-- Right eye pupil -->
+    <circle cx="15" cy="-55" r="4" fill="#000000"/>
+    <!-- Right eye highlight -->
+    <circle cx="12" cy="-58" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="11" cy="-59" r="1" fill="#FFFFFF"/>
+    
+    <!-- EYEBROWS - Fierce -->
+    <path d="M-30 -70 Q-15 -80 0 -70" stroke="#8B691B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M30 -70 Q15 -80 0 -70" stroke="#8B691B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    
+    <!-- LEFT WING - Realistic feather layers -->
+    <g transform="rotate(-15)">
+      <!-- Primary feathers -->
+      <path d="M-50 -20 Q-90 -40 -85 -80 Q-80 -110 -45 -95 Q-60 -70 -40 -45" 
+            fill="url(#goldBase)" 
+            stroke="#8B691B" 
+            stroke-width="2"/>
+      
+      <!-- Secondary feathers -->
+      <path d="M-40 -10 Q-75 -30 -70 -65 Q-65 -85 -35 -75" 
+            fill="url(#goldShine)" 
+            opacity="0.8"/>
+      
+      <!-- Feather details -->
+      <path d="M-60 -40 L-75 -55 M-55 -50 L-68 -65 M-50 -60 L-62 -75" 
+            stroke="#FFD700" 
+            stroke-width="1.5" 
+            opacity="0.5"/>
+    </g>
+    
+    <!-- RIGHT WING -->
+    <g transform="rotate(15)">
+      <!-- Primary feathers -->
+      <path d="M50 -20 Q90 -40 85 -80 Q80 -110 45 -95 Q60 -70 40 -45" 
+            fill="url(#goldBase)" 
+            stroke="#8B691B" 
+            stroke-width="2"/>
+      
+      <!-- Secondary feathers -->
+      <path d="M40 -10 Q75 -30 70 -65 Q65 -85 35 -75" 
+            fill="url(#goldShine)" 
+            opacity="0.8"/>
+      
+      <!-- Feather details -->
+      <path d="M60 -40 L75 -55 M55 -50 L68 -65 M50 -60 L62 -75" 
+            stroke="#FFD700" 
+            stroke-width="1.5" 
+            opacity="0.5"/>
+    </g>
+    
+    <!-- TAIL FEATHERS - Detailed -->
+    <path d="M-30 60 Q0 80 30 60" fill="url(#goldBase)" stroke="#8B691B" stroke-width="2"/>
+    <path d="M-20 55 Q0 70 20 55" fill="url(#goldShine)" opacity="0.6"/>
+    
+    <!-- Individual tail feather lines -->
+    <path d="M-15 58 L-18 70 M0 58 L0 72 M15 58 L18 70" 
           stroke="#FFD700" 
-          stroke-width="3"/>
+          stroke-width="1.5" 
+          opacity="0.4"/>
     
-    <!-- Inner shield highlight -->
-    <path d="M100 25 L165 58 L165 115 Q165 148 100 175 Q35 148 35 115 L35 58 L100 25" 
-          fill="none" 
-          stroke="#FFF8DC" 
-          stroke-width="2" 
-          stroke-opacity="0.6"/>
+    <!-- LEGS and TALONS - Realistic -->
+    <path d="M-20 70 L-25 90 L-15 90 L-10 75" fill="#8B691B" opacity="0.9"/>
+    <path d="M20 70 L25 90 L15 90 L10 75" fill="#8B691B" opacity="0.9"/>
     
-    <!-- Decorative border -->
-    <path d="M100 15 L175 52 L175 118 Q175 156 100 185 Q25 156 25 118 L25 52 L100 15" 
-          fill="none" 
-          stroke="url(#goldShine)" 
-          stroke-width="4" 
-          stroke-linejoin="round"/>
+    <!-- Talons (curved) -->
+    <path d="M-25 90 L-30 100 L-22 95 L-25 90" fill="#B8860B"/>
+    <path d="M-15 90 L-18 100 L-12 95 L-15 90" fill="#B8860B"/>
+    <path d="M25 90 L30 100 L22 95 L25 90" fill="#B8860B"/>
+    <path d="M15 90 L18 100 L12 95 L15 90" fill="#B8860B"/>
+    
+    <!-- FEATHER TEXTURE OVERLAY -->
+    <rect x="-100" y="-100" width="200" height="200" fill="url(#featherPattern)" opacity="0.3"/>
+    
+    <!-- FINAL HIGHLIGHTS -->
+    <circle cx="-30" cy="-30" r="15" fill="url(#eyeHighlight)" opacity="0.3"/>
+    <circle cx="30" cy="-30" r="15" fill="url(#eyeHighlight)" opacity="0.3"/>
   </g>
   
-  <!-- REALISTIC 3D EAGLE -->
-  <g transform="translate(100, 95)" filter="url(#goldGlow)">
-    <!-- Eagle body (muscular) -->
-  <ellipse cx="0" cy="-10" rx="28" ry="20" fill="url(#goldPrimary)" stroke="#B8860B" stroke-width="2"/>
-    
-    <!-- Head with detail -->
-    <ellipse cx="0" cy="-38" rx="15" ry="18" fill="url(#goldPrimary)" stroke="#B8860B" stroke-width="2"/>
-    
-    <!-- Curved beak (realistic) -->
-    <path d="M8 -42 Q15 -38 10 -32 Q5 -28 2 -35 Z" fill="#B8860B" stroke="#8B691B" stroke-width="1.5"/>
-    
-    <!-- Intense eyes -->
-    <circle cx="-6" cy="-45" r="4" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
-    <circle cx="6" cy="-45" r="4" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
-    <circle cx="-6" cy="-45" r="2" fill="#000000"/>
-    <circle cx="6" cy="-45" r="2" fill="#000000"/>
-    <!-- Eye glint -->
-    <circle cx="-7" cy="-47" r="1" fill="#FFFFFF"/>
-    <circle cx="5" cy="-47" r="1" fill="#FFFFFF"/>
-    
-    <!-- Eyebrows (fierce) -->
-    <path d="M-12 -52 Q-6 -58 0 -52" stroke="#000000" stroke-width="2" fill="none"/>
-    <path d="M12 -52 Q6 -58 0 -52" stroke="#000000" stroke-width="2" fill="none"/>
-    
-    <!-- Detailed wings (feathered) -->
-    <!-- Left wing -->
-    <path d="M-28 -20 Q-50 -35 -45 -55 Q-40 -70 -25 -60 Q-30 -45 -18 -35" 
-          fill="url(#goldPrimary)" 
-          stroke="#B8860B" 
-          stroke-width="2"
-          opacity="0.9"/>
-    
-    <!-- Right wing -->
-    <path d="M28 -20 Q50 -35 45 -55 Q40 -70 25 -60 Q30 -45 18 -35" 
-          fill="url(#goldPrimary)" 
-          stroke="#B8860B" 
-          stroke-width="2"
-          opacity="0.9"/>
-    
-    <!-- Feather details on wings -->
-    <path d="M-35 -38 L-42 -48 M-30 -42 L-38 -52" stroke="#B8860B" stroke-width="1.5" opacity="0.6"/>
-    <path d="M35 -38 L42 -48 M30 -42 L38 -52" stroke="#B8860B" stroke-width="1.5" opacity="0.6"/>
-    
-    <!-- Tail feathers -->
-    <path d="M-15 5 Q0 15 15 5" stroke="#B8860B" stroke-width="3" fill="none"/>
-    <path d="M-10 8 Q0 18 10 8" stroke="#B8860B" stroke-width="2" fill="none"/>
-  </g>
-  
-  <!-- TRB Letters with 3D effect -->
-  <g transform="translate(100, 155)">
+  <!-- TRB TEXT - 3D GOLD -->
+  <g transform="translate(200, 330)">
     <!-- Shadow -->
-    <text x="0" y="0" font-family="Arial Black" font-size="36" text-anchor="middle" fill="#000000" opacity="0.3" dx="2" dy="2">TRB</text>
-    <!-- Main text with gradient -->
-    <text x="0" y="0" font-family="Arial Black" font-size="36" text-anchor="middle" fill="url(#goldPrimary)">TRB</text>
+    <text x="0" y="0" font-family="Times New Roman, serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#000000" opacity="0.4" dx="3" dy="3">TRB</text>
+    <!-- Gold base -->
+    <text x="0" y="0" font-family="Times New Roman, serif" font-size="48" font-weight="bold" text-anchor="middle" fill="url(#goldBase)">TRB</text>
     <!-- Highlight -->
-    <text x="0" y="-2" font-family="Arial Black" font-size="36" text-anchor="middle" fill="url(#goldShine)" opacity="0.8">TRB</text>
+    <text x="-2" y="-2" font-family="Times New Roman, serif" font-size="48" font-weight="bold" text-anchor="middle" fill="url(#goldShine)" opacity="0.8">TRB</text>
   </g>
-  
-  <!-- Tiny diamond accents -->
-  <circle cx="70" cy="70" r="2" fill="#FFFFFF" opacity="0.8"/>
-  <circle cx="130" cy="70" r="2" fill="#FFFFFF" opacity="0.8"/>
-  <circle cx="55" cy="100" r="1.5" fill="#FFFFFF" opacity="0.6"/>
-  <circle cx="145" cy="100" r="1.5" fill="#FFFFFF" opacity="0.6"/>
 </svg>
