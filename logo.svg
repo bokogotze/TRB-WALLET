@@ -1,23 +1,18 @@
 <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
   <!-- AMERICAN FLAG CIRCLE -->
-  <circle cx="200" cy="200" r="180" fill="url(#flagPattern)"/>
   <circle cx="200" cy="200" r="180" fill="url(#americanFlag)"/>
-
+  
   <defs>
-    <!-- AMERICAN FLAG PATTERN INSIDE CIRCLE -->
-    <pattern id="flagPattern" patternUnits="userSpaceOnUse" width="360" height="360" patternTransform="rotate(0)">
-      <!-- Red stripes -->
-    <!-- REAL AMERICAN FLAG PATTERN -->
     <pattern id="americanFlag" patternUnits="userSpaceOnUse" width="360" height="360">
       <!-- Red Stripes -->
       <rect width="360" height="27.7" y="0" fill="#B22234"/>
       <rect width="360" height="27.7" y="55.4" fill="#B22234"/>
       <rect width="360" height="27.7" y="110.8" fill="#B22234"/>
-@@ -14,18 +14,17 @@
+      <rect width="360" height="27.7" y="166.2" fill="#B22234"/>
+      <rect width="360" height="27.7" y="221.6" fill="#B22234"/>
       <rect width="360" height="27.7" y="277" fill="#B22234"/>
       <rect width="360" height="27.7" y="332.4" fill="#B22234"/>
-
-      <!-- White stripes -->
+      
       <!-- White Stripes -->
       <rect width="360" height="27.7" y="27.7" fill="#FFFFFF"/>
       <rect width="360" height="27.7" y="83.1" fill="#FFFFFF"/>
@@ -25,28 +20,29 @@
       <rect width="360" height="27.7" y="193.9" fill="#FFFFFF"/>
       <rect width="360" height="27.7" y="249.3" fill="#FFFFFF"/>
       <rect width="360" height="27.7" y="304.7" fill="#FFFFFF"/>
-
-      <!-- Blue canton -->
-      <!-- Blue Canton with Stars -->
+      
+      <!-- Blue Canton -->
       <rect width="130" height="194" y="0" fill="#3C3B6E"/>
       
-      <!-- White stars -->
-      <!-- Stars -->
+      <!-- White Stars -->
       <circle cx="25" cy="25" r="4" fill="#FFFFFF"/>
       <circle cx="65" cy="25" r="4" fill="#FFFFFF"/>
       <circle cx="105" cy="25" r="4" fill="#FFFFFF"/>
-@@ -41,10 +40,9 @@
+      <circle cx="25" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="65" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="105" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="145" r="4" fill="#FFFFFF"/>
+      <circle cx="65" cy="145" r="4" fill="#FFFFFF"/>
+      <circle cx="105" cy="145" r="4" fill="#FFFFFF"/>
     </pattern>
   </defs>
-
-  <!-- Gold border around circle -->
-  <circle cx="200" cy="200" r="185" fill="none" stroke="#FFD700" stroke-width="8"/>
-  <circle cx="200" cy="200" r="175" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.5"/>
-  <!-- Gold Border -->
-  <circle cx="200" cy="200" r="185" fill="none" stroke="#FFD700" stroke-width="6"/>
-
-  <!-- WHITE TEXT "TRB" - BOLD AND CLEAR -->
-  <text x="200" y="250" font-family="Arial Black, Helvetica, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#FFFFFF" stroke="#000000" stroke-width="2">TRB</text>
+  
+  <!-- Gold Border (Trust Wallet style) -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="#FFD700" stroke-width="4"/>
+  
   <!-- White TRB Text -->
-  <text x="200" y="250" font-family="Arial Black, Helvetica, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#FFFFFF" stroke="#333" stroke-width="2">TRB</text>
+  <text x="200" y="250" font-family="Arial Black, Helvetica, sans-serif" font-size="120" font-weight="900" text-anchor="middle" fill="#FFFFFF">TRB</text>
 </svg>
