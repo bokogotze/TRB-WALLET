@@ -3,253 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TRB MINING • BTC ACCELERATOR</title>
+    <title>TRB Golden Years • Secure Retirement</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- SPLASH SCREEN -->
+    <!-- SPLASH - TRUST SIGNALS -->
     <div class="splash" id="splash">
         <div class="splash-logo">
-            <i class="fas fa-bolt"></i>
+            <i class="fas fa-shield-alt"></i>
         </div>
-        <h1>TRB MINING</h1>
-        <p>BTC Acceleration Protocol</p>
+        <h1>TRB Golden Years</h1>
+        <p>Secure Retirement Investment</p>
+        <div class="trust-badges">
+            <span>FDIC Insured</span>
+            <span>Government Backed</span>
+            <span>Since 1984</span>
+        </div>
         <div class="spinner"></div>
     </div>
 
-    <!-- LOGIN SCREEN -->
+    <!-- LOGIN - SIMPLE AND BIG -->
     <div class="login" id="login">
-        <div class="login-header">
-            <i class="fas fa-bolt"></i>
-            <h2>TRB MINING</h2>
-        </div>
-        
         <div class="login-card">
-            <h3>Welcome Back</h3>
-            <p>Access your mining dashboard</p>
+            <div class="login-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>TRB Golden Years</span>
+            </div>
+            
+            <h2>Welcome Back</h2>
+            <p class="login-sub">Access your retirement account</p>
             
             <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username" value="miner2242" readonly>
+                <label>Member ID</label>
+                <input type="text" value="Member2242" readonly>
             </div>
             
             <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" value="TrbMiner2242" readonly>
+                <label>PIN</label>
+                <input type="password" value="2242" readonly>
             </div>
             
-            <button class="login-btn" id="loginBtn">
-                <span>Enter Mining Dashboard</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+            <button class="login-btn" id="loginBtn">Access Account</button>
             
-            <div class="login-links">
-                <a href="#">Forgot Password?</a>
-                <a href="#">Create Account</a>
+            <div class="login-footer">
+                <a href="#">Forgot PIN?</a>
+                <a href="#">Member Support</a>
             </div>
         </div>
     </div>
 
-    <!-- MAIN DASHBOARD -->
+    <!-- MAIN DASHBOARD - BANK STYLE -->
     <div class="dashboard" id="dashboard">
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>TRB Golden Years</span>
             </div>
-            <div class="logo-area">
-                <i class="fas fa-bolt"></i>
-                <span>TRB MINING</span>
-            </div>
-            <div class="profile-btn" id="profileBtn">
-                <i class="fas fa-user-circle"></i>
-            </div>
+            <i class="fas fa-user-circle" id="profileBtn"></i>
         </div>
 
-        <!-- MAIN BALANCE CARD -->
+        <!-- WELCOME MESSAGE -->
+        <div class="welcome-card">
+            <h3>Good afternoon, Robert</h3>
+            <p>Member since 2024 • Platinum Status</p>
+        </div>
+
+        <!-- MAIN BALANCE - BIG NUMBERS FOR OLDER EYES -->
         <div class="balance-card">
-            <div class="balance-label">TOTAL MINING BALANCE</div>
-            <div class="balance-amount" id="mainBalance">$12,847.32</div>
-            <div class="balance-btc">≈ 0.2147 BTC</div>
-            
-            <div class="balance-stats">
-                <div class="stat">
-                    <span>Today's Earnings</span>
-                    <strong class="profit">+$48.32</strong>
-                </div>
-                <div class="stat">
-                    <span>Total Mined</span>
-                    <strong>$14.2K</strong>
-                </div>
+            <div class="balance-label">Total Retirement Balance</div>
+            <div class="balance-amount">$247,389.42</div>
+            <div class="balance-breakdown">
+                <span>Principal: $200,000</span>
+                <span>Returns: +$47,389.42</span>
             </div>
         </div>
 
-        <!-- ACCELERATOR BUTTON - MAIN FEATURE -->
-        <div class="accelerator-section">
-            <h3>BTC ACCELERATOR</h3>
-            <p>Click every 24h to boost mining speed</p>
-            
-            <div class="accelerator-card" id="acceleratorBtn">
-                <div class="accelerator-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <div class="accelerator-info">
-                    <span class="label">Mining Speed</span>
-                    <span class="value" id="speedValue">2.4x</span>
-                </div>
-                <div class="accelerator-timer" id="timerDisplay">
-                    <i class="far fa-clock"></i>
-                    <span id="countdown">23:59:59</span>
-                </div>
-            </div>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="miningProgress" style="width: 65%"></div>
-            </div>
-            <div class="progress-label">
-                <span>Daily Progress</span>
-                <span id="progressPercent">65%</span>
-            </div>
+        <!-- MONTHLY INCOME - WHAT THEY CARE ABOUT -->
+        <div class="income-card">
+            <div class="income-label">Monthly Guaranteed Income</div>
+            <div class="income-amount">$1,847.33</div>
+            <div class="income-badge">🔒 LIFETIME GUARANTEED</div>
         </div>
 
-        <!-- MINING STATS -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <i class="fas fa-microchip"></i>
-                <span class="stat-label">Hash Rate</span>
-                <span class="stat-value">124.7 TH/s</span>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-plug"></i>
-                <span class="stat-label">Power</span>
-                <span class="stat-value">3.4 kW</span>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <span class="stat-label">Miners</span>
-                <span class="stat-value">12.4K</span>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-globe"></i>
-                <span class="stat-label">Pool</span>
-                <span class="stat-value">TRB Pool</span>
-            </div>
+        <!-- QUICK ACTIONS - BIG BUTTONS -->
+        <div class="actions-grid">
+            <button class="action-btn" id="depositBtn">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add Funds</span>
+            </button>
+            <button class="action-btn" id="withdrawBtn">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Withdraw</span>
+            </button>
+            <button class="action-btn" id="statementBtn">
+                <i class="fas fa-file-invoice"></i>
+                <span>Statements</span>
+            </button>
+            <button class="action-btn" id="supportBtn">
+                <i class="fas fa-headset"></i>
+                <span>Support</span>
+            </button>
         </div>
 
-        <!-- INVESTMENT PLANS -->
+        <!-- INVESTMENT PLANS - RETIREMENT FOCUSED -->
         <div class="plans-section">
-            <h3>Mining Plans</h3>
+            <h3>Retirement Plans</h3>
             
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <h4>Starter</h4>
-                    <div class="plan-price">$100</div>
-                    <div class="plan-profit">Daily: $2.50</div>
-                    <button class="plan-btn" onclick="alert('Contact agent to invest')">Select</button>
+            <div class="plan-card" onclick="alert('Contact your agent to upgrade')">
+                <div class="plan-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Secure Income</h4>
+                        <p>4.2% APY • Government backed</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
                 </div>
-                
-                <div class="plan-card popular">
-                    <div class="popular-badge">🔥 BEST</div>
-                    <h4>Pro</h4>
-                    <div class="plan-price">$1,000</div>
-                    <div class="plan-profit">Daily: $35.00</div>
-                    <button class="plan-btn" onclick="alert('Contact agent to invest')">Select</button>
+            </div>
+            
+            <div class="plan-card" onclick="alert('Contact your agent to upgrade')">
+                <div class="plan-header">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <h4>Platinum Plus</h4>
+                        <p>5.8% APY • Enhanced returns</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
                 </div>
-                
-                <div class="plan-card">
-                    <h4>Whale</h4>
-                    <div class="plan-price">$10,000</div>
-                    <div class="plan-profit">Daily: $450.00</div>
-                    <button class="plan-btn" onclick="alert('Contact agent to invest')">Select</button>
+            </div>
+            
+            <div class="plan-card featured" onclick="alert('Contact your agent to upgrade')">
+                <div class="featured-badge">MOST POPULAR</div>
+                <div class="plan-header">
+                    <i class="fas fa-crown"></i>
+                    <div>
+                        <h4>Lifetime Legacy</h4>
+                        <p>7.2% APY • Maximum benefits</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
         </div>
 
         <!-- RECENT TRANSACTIONS -->
         <div class="transactions-section">
-            <div class="section-header">
-                <h3>Recent Payouts</h3>
-                <span>View All <i class="fas fa-chevron-right"></i></span>
+            <h3>Recent Activity</h3>
+            
+            <div class="transaction-item">
+                <i class="fas fa-arrow-down deposit"></i>
+                <div>
+                    <strong>Monthly Distribution</strong>
+                    <span>March 1, 2025</span>
+                </div>
+                <span class="amount">+$1,847.33</span>
             </div>
             
-            <div class="transaction-list">
-                <div class="transaction-item">
-                    <i class="fas fa-check-circle success"></i>
-                    <div>
-                        <strong>BTC Mining Reward</strong>
-                        <span>2 minutes ago</span>
-                    </div>
-                    <span class="transaction-amount profit">+$48.32</span>
-                </div>
-                
-                <div class="transaction-item">
-                    <i class="fas fa-check-circle success"></i>
-                    <div>
-                        <strong>BTC Mining Reward</strong>
-                        <span>1 hour ago</span>
-                    </div>
-                    <span class="transaction-amount profit">+$47.18</span>
-                </div>
-                
-                <div class="transaction-item">
-                    <i class="fas fa-check-circle success"></i>
-                    <div>
-                        <strong>BTC Mining Reward</strong>
-                        <span>3 hours ago</span>
-                    </div>
-                    <span class="transaction-amount profit">+$49.05</span>
-                </div>
-                
-                <div class="transaction-item">
-                    <i class="fas fa-check-circle success"></i>
-                    <div>
-                        <strong>BTC Mining Reward</strong>
-                        <span>5 hours ago</span>
-                    </div>
-                    <span class="transaction-amount profit">+$46.92</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- REFERRAL SECTION -->
-        <div class="referral-section">
-            <h3>Referral Bonus</h3>
-            <div class="referral-card">
-                <i class="fas fa-gift"></i>
+            <div class="transaction-item">
+                <i class="fas fa-arrow-down deposit"></i>
                 <div>
-                    <strong>Earn 10% from referrals</strong>
-                    <span>Your link: https://trb-mining.com/ref2242</span>
+                    <strong>Monthly Distribution</strong>
+                    <span>February 1, 2025</span>
                 </div>
-                <button class="copy-btn" onclick="copyRefLink()">
-                    <i class="fas fa-copy"></i>
-                </button>
+                <span class="amount">+$1,832.47</span>
+            </div>
+            
+            <div class="transaction-item">
+                <i class="fas fa-arrow-down deposit"></i>
+                <div>
+                    <strong>Monthly Distribution</strong>
+                    <span>January 1, 2025</span>
+                </div>
+                <span class="amount">+$1,817.92</span>
+            </div>
+            
+            <div class="transaction-item failed">
+                <i class="fas fa-times-circle"></i>
+                <div>
+                    <strong>Withdrawal Attempt</strong>
+                    <span>Verification required</span>
+                </div>
+                <span class="amount failed">-$50,000</span>
             </div>
         </div>
 
-        <!-- BOTTOM NAVIGATION -->
+        <!-- TRUST SECTION -->
+        <div class="trust-section">
+            <div class="trust-item">
+                <i class="fas fa-check-circle"></i>
+                <span>FDIC Insured</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Government Backed</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-check-circle"></i>
+                <span>SIPC Protection</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-check-circle"></i>
+                <span>40+ Years Trusted</span>
+            </div>
+        </div>
+
+        <!-- CONTACT AGENT -->
+        <div class="agent-card">
+            <i class="fas fa-user-tie"></i>
+            <div>
+                <strong>Your Personal Agent</strong>
+                <span>Sarah Johnson • Available 24/7</span>
+            </div>
+            <button class="agent-btn" id="agentBtn">
+                <i class="fas fa-phone"></i>
+            </button>
+        </div>
+
+        <!-- BOTTOM NAV - SIMPLE -->
         <div class="bottom-nav">
             <button class="nav-item active">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </button>
-            <button class="nav-item" id="miningBtn">
-                <i class="fas fa-bolt"></i>
-                <span>Mine</span>
+            <button class="nav-item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Portfolio</span>
             </button>
-            <button class="nav-item" id="walletBtn">
-                <i class="fas fa-wallet"></i>
-                <span>Wallet</span>
+            <button class="nav-item">
+                <i class="fas fa-file-signature"></i>
+                <span>Documents</span>
             </button>
-            <button class="nav-item" id="teamBtn">
-                <i class="fas fa-users"></i>
-                <span>Team</span>
+            <button class="nav-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>Support</span>
             </button>
+        </div>
+    </div>
+
+    <!-- AGENT CONTACT MODAL -->
+    <div class="modal" id="agentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Your Agent</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="agent-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <h4>Sarah Johnson</h4>
+                    <p>Senior Retirement Specialist</p>
+                    
+                    <div class="agent-details">
+                        <p><i class="fas fa-phone"></i> 1-800-555-0123</p>
+                        <p><i class="fas fa-envelope"></i> sarah.j@trbgolden.com</p>
+                        <p><i class="fab fa-telegram"></i> @trb_agent</p>
+                    </div>
+                    
+                    <p class="agent-note">Available 24/7 for withdrawals and investments</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -257,36 +275,25 @@
     <div class="modal" id="withdrawModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Withdraw Funds</h3>
+                <h3>Withdrawal Request</h3>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="withdraw-info">
-                    <i class="fas fa-clock"></i>
-                    <h4>Withdrawal Processing</h4>
-                    <p>Minimum: $50 USDT (TRC20)</p>
-                    <p>Contact agent to process withdrawal</p>
-                    <p class="agent-contact">Telegram: @trb_mining</p>
+                    <i class="fas fa-lock"></i>
+                    <h4>Secure Withdrawal</h4>
+                    <p>For your security, please contact your agent to process withdrawals over $1,000.</p>
+                    
+                    <div class="agent-contact">
+                        <p><strong>Sarah Johnson</strong></p>
+                        <p>1-800-555-0123</p>
+                        <p>@trb_agent (Telegram)</p>
+                    </div>
+                    
+                    <button class="contact-btn" onclick="window.location.href='https://t.me/trb_agent'">
+                        <i class="fab fa-telegram"></i> Contact Agent
+                    </button>
                 </div>
-                <a href="https://t.me/trb_mining" class="telegram-btn" target="_blank">
-                    <i class="fab fa-telegram"></i> Contact Agent
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- INVEST MODAL -->
-    <div class="modal" id="investModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Upgrade Mining</h3>
-                <button class="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Contact agent to purchase mining plan</p>
-                <a href="https://t.me/trb_mining" class="telegram-btn" target="_blank">
-                    <i class="fab fa-telegram"></i> Message Agent
-                </a>
             </div>
         </div>
     </div>
@@ -295,16 +302,16 @@
     <div class="modal" id="profileModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Miner Profile</h3>
+                <h3>Member Profile</h3>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="profile-info">
-                    <i class="fas fa-user-circle profile-avatar"></i>
-                    <h4>miner2242</h4>
-                    <p>Member since: March 2025</p>
-                    <p>Total Mined: $14,283.47</p>
-                    <p>Referrals: 12</p>
+                    <i class="fas fa-user-circle"></i>
+                    <h4>Robert Member2242</h4>
+                    <p>Member since: January 2024</p>
+                    <p>Status: Platinum Member</p>
+                    <p>Agent: Sarah Johnson</p>
                 </div>
             </div>
         </div>
